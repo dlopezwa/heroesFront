@@ -13,8 +13,8 @@ export interface HeroETO {
     heroName:  string;
     heroPower: string;
     id:        number;
-    _embedded: HeroEmbedded;
-    _links:    HeroLinks;
+    _embedded?: HeroEmbedded;
+    _links?:    HeroLinks;
 }
 
 export interface HeroEmbedded {

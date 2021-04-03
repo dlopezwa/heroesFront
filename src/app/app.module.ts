@@ -16,6 +16,7 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { MissionComponent } from './pages/mission/mission.component';
 import { NewHeroComponent } from './pages/heroe/new-hero/new-hero.component';
 import { TableHeroComponent } from './pages/heroe/table-hero/table-hero.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TableHeroComponent } from './pages/heroe/table-hero/table-hero.componen
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
+    HttpClientModule,
     MatButtonModule,
     MatIconModule,
     MatTableModule,
