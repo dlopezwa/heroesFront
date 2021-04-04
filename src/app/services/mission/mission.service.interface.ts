@@ -1,38 +1,32 @@
-export interface HeroesETO {
-    _embedded: HeroesETOEmbedded;
-    _links:    HeroesETOLinks;
+import { HeroETO } from "../hero/hero.service.interface";
+
+export interface MissionsETO {
+    _embedded: MissionsETOEmbedded;
+    _links:    MissionsETOLinks;
 }
 
-export interface HeroesETOEmbedded {
-    missions: Mission[];
+export interface MissionsETOEmbedded {
+    missions: MissionETO[];
 }
 
-export interface Mission {
+export interface MissionETO {
     instructions: string;
-    id:           number;
-    _embedded:    MissionEmbedded;
-    _links:       MissionLinks;
+    _embedded?:   MissionEmbedded;
+    _links?:       MissionLinks;
 }
 
 export interface MissionEmbedded {
-    heroes: Hero[];
+    heroes: HeroETO[];
 }
 
-export interface Hero {
-    firstName: string;
-    lastName:  string;
-    heroName:  string;
-    heroPower: string;
-    id:        number;
-}
 
 export interface MissionLinks {
     self:    Profile;
-    mission: Heroes;
-    heroes:  Heroes;
+    mission: HeroesLink;
+    heroes:  HeroesLink;
 }
 
-export interface Heroes {
+export interface HeroesLink {
     href:      string;
     templated: boolean;
 }
@@ -41,7 +35,7 @@ export interface Profile {
     href: string;
 }
 
-export interface HeroesETOLinks {
+export interface MissionsETOLinks {
     self:    Profile;
     profile: Profile;
 }

@@ -17,6 +17,8 @@ import { MissionComponent } from './pages/mission/mission.component';
 import { NewHeroComponent } from './pages/heroe/new-hero/new-hero.component';
 import { TableHeroComponent } from './pages/heroe/table-hero/table-hero.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewMissionComponent } from './pages/mission/new-mission/new-mission.component';
+import { TableMissionComponent } from './pages/mission/table-mission/table-mission.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MissionComponent,
     NewHeroComponent,
     TableHeroComponent,
+    NewMissionComponent,
+    TableMissionComponent,
   ],
   imports: [
     BrowserModule,

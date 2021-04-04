@@ -17,7 +17,7 @@ export class HeroService {
   }
 
   findAllHero(): Observable<HeroesETO> {
-    return this.httpClient.get<HeroesETO>('http://localhost:8080/heroes/');
+    return this.httpClient.get<HeroesETO>(`${environment.APIEndPoint}heroes/`);
   }
 
 }

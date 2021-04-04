@@ -1,0 +1,12 @@
+.mat-footer-row,
+.mat-header-row,
+.mat-row {
+    min-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-column-instructions {
+    width: 90%;
+}
