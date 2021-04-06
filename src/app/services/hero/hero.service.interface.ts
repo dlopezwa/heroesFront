@@ -12,7 +12,7 @@ export interface HeroETO {
     lastName:  string;
     heroName:  string;
     heroPower: string;
-    id:        number;
+    id?:        number;
     _embedded?: HeroEmbedded;
     _links?:    HeroLinks;
 }

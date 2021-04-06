@@ -1,0 +1,50 @@
+<div class="formAddEditHero">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput [formControl]="this.profileForm.get('firstName')">
+                <button mat-button *ngIf="this.profileForm.get('firstName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.profileForm.get('firstName').setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput [formControl]="this.profileForm.get('lastName')">
+                <button mat-button *ngIf="this.profileForm.get('lastName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.profileForm.get('lastName').setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Hero Name</mat-label>
+                <input matInput [formControl]="this.profileForm.get('heroName')">
+                <button mat-button *ngIf="this.profileForm.get('heroName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.profileForm.get('heroName').setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Hero Power</mat-label>
+                <input matInput [formControl]="this.profileForm.get('heroPower')">
+                <button mat-button *ngIf="this.profileForm.get('heroPower').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.profileForm.get('heroPower').setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-raised-button color="primary" [disabled]="!profileForm.valid"
+                onsubmit="onSubmit()">Aceptar</button>
+        </div>
+    </form>
+</div>
