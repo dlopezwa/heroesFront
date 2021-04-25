@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  APIEndPoint: 'http://localhost:8080/'
+  APIEndPoint: 'http://localhost:8080/',
+  APIEndPointApplications: 'http://localhost:8083/mbea/api/'
 };
 
 /*

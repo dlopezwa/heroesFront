@@ -24,6 +24,10 @@ import { NewMissionComponent } from './pages/mission/new-mission/new-mission.com
 import { TableMissionComponent } from './pages/mission/table-mission/table-mission.component';
 import { ModalAddEditHeroComponent } from './pages/heroe/modal-add-edit-hero/modal-add-edit-hero.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedLibExampleModule } from 'shared-lib-example';
+import { SidenavApplicationsComponent } from 'shared-lib-example/lib/components/sidenav-applications/sidenav-applications.component';
+import { Function1Component } from './pages/function1/function1.component';
+import { Function2Component } from './pages/function2/function2.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NewMissionComponent,
     TableMissionComponent,
     ModalAddEditHeroComponent,
+    Function1Component,
+    Function2Component,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,7 +58,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatDialogModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedLibExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
