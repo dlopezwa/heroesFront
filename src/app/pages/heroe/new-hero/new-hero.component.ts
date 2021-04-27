@@ -12,10 +12,14 @@ export class NewHeroComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openDialog() {
-    let dialogRef = this.dialog.open(ModalAddEditHeroComponent, {
-      height: '375px',
+  openDialog(): void {
+    this.dialog.open(ModalAddEditHeroComponent, {
+      height: '400px',
       width: '550px',
-    }); 
+      autoFocus: false,
+      data: {
+        modalType: 'new'
+      }
+    });
   }
 }

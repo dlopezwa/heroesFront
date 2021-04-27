@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MissionService } from 'src/app/services/mission.service';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { MissionService } from 'src/app/services/mission/mission.service';
 import { MissionETO } from 'src/app/services/mission/mission.service.interface';
 
 @Component({
@@ -7,7 +7,9 @@ import { MissionETO } from 'src/app/services/mission/mission.service.interface';
   templateUrl: './table-mission.component.html',
   styleUrls: ['./table-mission.component.scss']
 })
-export class TableMissionComponent implements OnInit {
+export class TableMissionComponent implements OnInit, OnChanges {
+
+  @Input() saveEventFromFather: boolean;
 
   dataSource: MissionETO[];
   displayedColumns: string[] = ['instructions'];
@@ -15,6 +17,16 @@ export class TableMissionComponent implements OnInit {
   constructor(private missionService: MissionService) { }
 
   ngOnInit(): void {
+    this.callMissionService();
+  }
+
+  ngOnChanges(): void{
+    if (this.saveEventFromFather) {
+      this.callMissionService();
+    }
+  }
+
+  callMissionService(): void{
     this.missionService.findAllMission().subscribe( res => {
       this.dataSource = res._embedded.missions;
       console.log(res);

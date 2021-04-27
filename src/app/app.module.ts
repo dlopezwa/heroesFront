@@ -28,6 +28,7 @@ import { SharedLibExampleModule } from 'shared-lib-example';
 import { SidenavApplicationsComponent } from 'shared-lib-example/lib/components/sidenav-applications/sidenav-applications.component';
 import { Function1Component } from './pages/function1/function1.component';
 import { Function2Component } from './pages/function2/function2.component';
+import { ModalAddMissionComponent } from './pages/mission/modal-add-mission/modal-add-mission.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { Function2Component } from './pages/function2/function2.component';
     ModalAddEditHeroComponent,
     Function1Component,
     Function2Component,
+    ModalAddMissionComponent,
   ],
   imports: [
     BrowserAnimationsModule,
