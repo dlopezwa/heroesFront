@@ -24,4 +24,8 @@ export class HeroService {
     return this.httpClient.post<HeroETO>(`${environment.APIEndPoint}heroes/`, heroETO);
   }
 
+  updateHero(hero: HeroETO, link: string): Observable<HeroETO> {
+    return this.httpClient.put<HeroETO>(link, hero);
+  }
+
 }

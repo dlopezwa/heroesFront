@@ -1,11 +1,20 @@
 <div class="formAddEditHero">
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <!-- Title -->
+        <mat-label><strong>{{title}}</strong></mat-label>
+        <!-- Close button -->
+        <button mat-icon-button color="primary"
+        (click)="this.matDialogRef.close()"><mat-icon>close</mat-icon></button>
+    </div>
+
+    <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
         <div>
             <mat-form-field>
                 <mat-label>First Name</mat-label>
-                <input matInput [formControl]="this.profileForm.get('firstName')">
-                <button mat-button *ngIf="this.profileForm.get('firstName').value" matSuffix mat-icon-button
-                    aria-label="Clear" (click)="this.profileForm.get('firstName').setValue('')">
+                <input matInput [formControl]="this.heroForm.get('firstName')">
+                <button mat-button *ngIf="this.heroForm.get('firstName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.heroForm.get('firstName').setValue('')">
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
@@ -14,9 +23,9 @@
         <div>
             <mat-form-field>
                 <mat-label>Last Name</mat-label>
-                <input matInput [formControl]="this.profileForm.get('lastName')">
-                <button mat-button *ngIf="this.profileForm.get('lastName').value" matSuffix mat-icon-button
-                    aria-label="Clear" (click)="this.profileForm.get('lastName').setValue('')">
+                <input matInput [formControl]="this.heroForm.get('lastName')">
+                <button mat-button *ngIf="this.heroForm.get('lastName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.heroForm.get('lastName').setValue('')">
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
@@ -25,9 +34,9 @@
         <div>
             <mat-form-field>
                 <mat-label>Hero Name</mat-label>
-                <input matInput [formControl]="this.profileForm.get('heroName')">
-                <button mat-button *ngIf="this.profileForm.get('heroName').value" matSuffix mat-icon-button
-                    aria-label="Clear" (click)="this.profileForm.get('heroName').setValue('')">
+                <input matInput [formControl]="this.heroForm.get('heroName')">
+                <button mat-button *ngIf="this.heroForm.get('heroName').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.heroForm.get('heroName').setValue('')">
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
@@ -35,16 +44,16 @@
         <div>
             <mat-form-field>
                 <mat-label>Hero Power</mat-label>
-                <input matInput [formControl]="this.profileForm.get('heroPower')">
-                <button mat-button *ngIf="this.profileForm.get('heroPower').value" matSuffix mat-icon-button
-                    aria-label="Clear" (click)="this.profileForm.get('heroPower').setValue('')">
+                <input matInput [formControl]="this.heroForm.get('heroPower')">
+                <button mat-button *ngIf="this.heroForm.get('heroPower').value" matSuffix mat-icon-button
+                    aria-label="Clear" (click)="this.heroForm.get('heroPower').setValue('')">
                     <mat-icon>close</mat-icon>
                 </button>
             </mat-form-field>
         </div>
         <div fxLayout="row" fxLayoutAlign="end">
-            <button mat-raised-button color="primary" [disabled]="!profileForm.valid"
-                onsubmit="onSubmit()">Aceptar</button>
+            <button mat-raised-button color="primary" [disabled]="!heroForm.valid"
+                onsubmit="onSubmit()">{{buttonText}}</button>
         </div>
     </form>
 </div>
