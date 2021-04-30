@@ -103,8 +103,6 @@ export class ModalAddEditHeroComponent implements OnInit {
       this.matDialogRef.close();
     });
   }
-
-   console.log('hace el submit');
   }
 
 }

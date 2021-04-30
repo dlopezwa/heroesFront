@@ -18,6 +18,7 @@ export class MissionComponent implements OnInit {
   // recibimos la información del hijo (new-mission) y la enviamos al otro hijo (la tabla)
   receiveSaveEvent($event): void {
     this.saveEventToChild = $event;
+    console.log(this.saveEventToChild)
   }
 
 }

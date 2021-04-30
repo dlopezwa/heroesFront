@@ -12,8 +12,6 @@ import { NotificationSnackBarService } from 'src/app/services/notification-snack
 })
 export class ModalAddMissionComponent implements OnInit {
 
-  @Output() saveEvent = new EventEmitter<boolean>();
-
   // Formulario
   missionForm = this.fb.group({
     instructions: new FormControl('', [Validators.required, Validators.maxLength(150)])
@@ -37,11 +35,8 @@ export class ModalAddMissionComponent implements OnInit {
     return missionETO;
   }
 
-  click(){
-    console.log('hola')
-  }
-
   onSubmit(): void {
+    console.log(1)
     if (!this.missionForm.valid) { return; }
     this.missionService.saveMission(this.getMission()).subscribe(res => {
       console.log('Guardado OK: ', res);

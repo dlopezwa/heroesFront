@@ -20,8 +20,8 @@ export class NewMissionComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.matDialog.open(ModalAddMissionComponent, {
-      height: '400px',
-      width: '550px',
+      height: '190px',
+      width: '500px',
       autoFocus: false
     });
     dialogRef.afterClosed().subscribe(result => {

@@ -3,12 +3,9 @@
     <div fxLayout="row" fxLayoutAlign="space-between center">
         <!-- Title -->
         <mat-label><strong>New mission</strong></mat-label>
-        <!-- Close button -->
-            <button mat-icon-button color="primary"
-            (click)="this.matDialogRef.close()"><mat-icon>close</mat-icon></button>
-    </div>
+  </div>
 
-    <form [formGroup]="missionForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="missionForm">
         <div>
             <mat-form-field>
                 <mat-label>Instructions</mat-label>
@@ -21,8 +18,12 @@
         </div>
 
         <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
+            <!-- Close button -->
+            <button mat-raised-button color="warn"
+            (click)="this.matDialogRef.close()">Cancelar</button>
+            <!-- Save button -->
             <button mat-raised-button color="primary" [disabled]="!missionForm.valid"
-                onsubmit="onsubmit()">Guardar misión</button>
+                (click)="onSubmit()">Guardar misión</button>
         </div>
     </form>
 </div>

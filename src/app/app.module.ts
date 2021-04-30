@@ -19,7 +19,7 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { MissionComponent } from './pages/mission/mission.component';
 import { NewHeroComponent } from './pages/heroe/new-hero/new-hero.component';
 import { TableHeroComponent } from './pages/heroe/table-hero/table-hero.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NewMissionComponent } from './pages/mission/new-mission/new-mission.component';
 import { TableMissionComponent } from './pages/mission/table-mission/table-mission.component';
 import { ModalAddEditHeroComponent } from './pages/heroe/modal-add-edit-hero/modal-add-edit-hero.component';
@@ -29,6 +29,9 @@ import { SidenavApplicationsComponent } from 'shared-lib-example/lib/components/
 import { Function1Component } from './pages/function1/function1.component';
 import { Function2Component } from './pages/function2/function2.component';
 import { ModalAddMissionComponent } from './pages/mission/modal-add-mission/modal-add-mission.component';
+import { LoginFormComponent } from './login/component/login-form/login-form.component';
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
+import { ErrorManageComponent } from './pages/error-manage/error-manage.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { ModalAddMissionComponent } from './pages/mission/modal-add-mission/moda
     Function1Component,
     Function2Component,
     ModalAddMissionComponent,
+    LoginFormComponent,
+    ErrorManageComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -63,7 +68,13 @@ import { ModalAddMissionComponent } from './pages/mission/modal-add-mission/moda
     ReactiveFormsModule,
     SharedLibExampleModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
