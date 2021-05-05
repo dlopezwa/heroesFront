@@ -14,6 +14,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
+
 
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { MissionComponent } from './pages/mission/mission.component';
@@ -32,6 +36,8 @@ import { ModalAddMissionComponent } from './pages/mission/modal-add-mission/moda
 import { LoginFormComponent } from './login/component/login-form/login-form.component';
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { ErrorManageComponent } from './pages/error-manage/error-manage.component';
+import { VillainComponent } from './pages/villain/villain.component';
+import { TableVillainComponent } from './pages/villain/table-villain/table-villain.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +56,8 @@ import { ErrorManageComponent } from './pages/error-manage/error-manage.componen
     ModalAddMissionComponent,
     LoginFormComponent,
     ErrorManageComponent,
+    VillainComponent,
+    TableVillainComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,7 +74,9 @@ import { ErrorManageComponent } from './pages/error-manage/error-manage.componen
     MatDialogModule,
     MatInputModule,
     ReactiveFormsModule,
-    SharedLibExampleModule
+    SharedLibExampleModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     {
